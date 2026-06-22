@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>了解世界杯 · 快速识别站点用途</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #faf7f2;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 860px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            padding: 2.4rem 2rem 3rem;
+        }
+
+        /* ---------- hero ---------- */
+        .hero {
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #ece7e0;
+            padding-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #1e7a5e, #0d6b4f);
+            color: white;
+            display: inline-block;
+            padding: 0 0.4rem 0.1rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #5a534c;
+            max-width: 80%;
+        }
+
+        /* ---------- 说明区 ---------- */
+        .intro-section {
+            margin: 2.4rem 0;
+        }
+
+        .intro-section h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-bottom: 1rem;
+            padding-left: 0.6rem;
+            border-left: 5px solid #b8a99c;
+        }
+
+        .intro-section p {
+            margin-bottom: 1rem;
+            color: #3d3834;
+        }
+
+        .intro-section .highlight-box {
+            background-color: #f5f1eb;
+            padding: 1.6rem 1.8rem;
+            border-radius: 20px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #c3b3a2;
+        }
+
+        .intro-section .highlight-box p {
+            margin-bottom: 0.4rem;
+        }
+
+        .intro-section .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ---------- 优势区 ---------- */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.6rem;
+            margin: 2.8rem 0;
+        }
+
+        .advantage-card {
+            background: #f9f5f0;
+            border-radius: 24px;
+            padding: 1.5rem 1.2rem;
+            border: 1px solid #ece3da;
+        }
+
+        .advantage-card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1e3d33;
+        }
+
+        .advantage-card p {
+            font-size: 0.95rem;
+            color: #4f4843;
+        }
+
+        /* ---------- 引用/提示 ---------- */
+        .callout {
+            background: #ede7df;
+            border-radius: 30px;
+            padding: 1.8rem 2rem;
+            margin: 2.6rem 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.3rem 0.5rem;
+        }
+
+        .callout .label {
+            background: #b7a291;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            text-transform: uppercase;
+        }
+
+        .callout p {
+            display: inline;
+            font-size: 1rem;
+            color: #2f2a26;
+        }
+
+        /* ---------- FAQ摘要 ---------- */
+        .faq-summary {
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.5rem;
+            font-weight: 450;
+            margin-bottom: 1.4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ece3db;
+            padding: 0.9rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #2e2a26;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #5b534c;
+            font-size: 0.95rem;
+        }
+
+        /* ---------- 底部链接 ---------- */
+        .bottom-link-area {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e7dfd6;
+            text-align: center;
+        }
+
+        .bottom-link-area p {
+            color: #5c5349;
+            font-size: 1.05rem;
+        }
+
+        .bottom-link-area a {
+            color: #0b5e44;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #bdaa96;
+            transition: border-color 0.2s;
+        }
+
+        .bottom-link-area a:hover {
+            border-bottom: 1px solid #0b5e44;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.6rem;
+            }
+
+            .page {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                max-width: 100%;
+                font-size: 1rem;
+            }
+
+            .advantage-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .callout {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+
+            .intro-section .highlight-box {
+                padding: 1.2rem;
+            }
+
+            .faq-summary h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .page {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>关于 <span>世界杯</span> 站点 · 一次清晰的梳理</h1>
+        <p>你来到这里，或许是想确认这个网站是否与你想找的 <strong>世界杯</strong> 内容有关。下面用平实的角度说明它的用途。</p>
+    </div>
+
+    <!-- 说明区：网站用途与定位 -->
+    <div class="intro-section">
+        <h2>站点说明</h2>
+        <p>这是一个以 <strong>世界杯</strong> 为信息核心的轻量导航与资讯聚合页面，主要帮助用户快速了解近几届赛事的基本脉络、球队动态以及观赛渠道的整理。不涉及博彩、虚假中奖或任何违规内容。</p>
+        <div class="highlight-box">
+            <p>📌 这个页面本身不是官方 FIFA 站点，而是一个独立的爱好者内容整理页。所有引用信息均来源于公开可查的赛事数据与新闻。</p>
+            <p style="margin-top: 0.6rem;">如果你只是想快速找到与 <a href="https://cn-h5-united2026.com" style="color:#0f6649; text-decoration: underline; text-underline-offset: 3px;">世界杯</a> 相关的实用链接、赛程参考或背景介绍，这里是一个不错的起点。</p>
+        </div>
+        <p>站内不收集任何个人信息，也不要求注册或登录。你可以自由浏览、分享。</p>
+    </div>
+
+    <!-- 优势区：三个简短特点 -->
+    <div class="advantage-grid">
+        <div class="advantage-card">
+            <h3>📋 赛事脉络</h3>
+            <p>从预选赛到决赛圈，关键时间节点与分组形势以清晰列表呈现，减少翻找信息的麻烦。</p>
+        </div>
+        <div class="advantage-card">
+            <h3>🌐 多源聚合</h3>
+            <p>整合了多家主流媒体与数据平台的公开内容，方便你在一个页面内横向对比。</p>
+        </div>
+        <div class="advantage-card">
+            <h3>🧭 直达实用信息</h3>
+            <p>避免在信息流中反复跳转，重点内容（场馆、转播、积分）都做了摘要与链接整理。</p>
+        </div>
+    </div>
+
+    <!-- 引用块 / 提示框 -->
+    <div class="callout">
+        <span class="label">📣 友善提示</span>
+        <p>如果你正在寻找往届冠军纪录、最新排名或举办国介绍，可以试试站内搜索框（位于页面顶部）。所有信息均保持中立。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">❓ 这个网站是官方世界杯网站吗？</div>
+            <div class="faq-a">不是。这是一个由爱好者维护的信息整理页，主要汇总公开资料，帮助用户更高效地了解世界杯相关内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">❓ 我能在这里看直播吗？</div>
+            <div class="faq-a">本站不提供直播信号，但整理了各地持权转播商名单与官方页面链接，你可以通过它们观看比赛。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">❓ 信息更新频率如何？</div>
+            <div class="faq-a">赛程与重要新闻会在每个比赛日前后更新，其他固定信息（如历史数据）长期有效。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">❓ 页面上的链接安全吗？</div>
+            <div class="faq-a">所有外链都经过人工筛选，指向正规媒体、赛事官网或权威数据平台。但我们仍建议你自行辨别。</div>
+        </div>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <div class="bottom-link-area">
+        <p>如果你想深入了解赛事全貌，可以从 <a href="https://cn-h5-united2026.com">世界杯</a> 开始，浏览我们整理的详细目录与导航。</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #7b7168;">© 展示页 · 仅供信息参考 · 无商业用途</p>
+    </div>
+
+</div>
+</body>
+</html>
